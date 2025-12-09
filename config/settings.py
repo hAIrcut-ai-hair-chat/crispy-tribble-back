@@ -21,7 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'celery'
+    'celery',
+    'core.authUser',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +91,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+PASSAGE_API_KEY = os.getenv("PASSAGE_API_KEY")
+PASSAGE_APP_ID = os.getenv("PASSAGE_APP_ID")
+
+AUTH_USER_MODEL = "authUser.User"
+
 
 
 
