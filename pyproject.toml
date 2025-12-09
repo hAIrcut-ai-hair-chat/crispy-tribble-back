@@ -1,0 +1,20 @@
+[project]
+name = "crispy-tribble-back"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "user.name: kauabarros-25", email = "user.mail: martinsbarroskaua@gmail.com"},
+]
+dependencies = ["django>=5.2.9", "djangorestframework>=3.16.1", "celery>=5.6.0", "passage-identity>=3.0.1", "python-dotenv>=1.2.1", "django-cors-headers>=4.9.0"]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+dev = "python3 manage.py runserver"
+makemigrations = "python3 manage.py migrate"
+migrate = "python3 manage.py makemigrations"
