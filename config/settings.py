@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'celery',
     'core.authUser',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
