@@ -4,7 +4,8 @@ from rest_framework.decorators import action
 from core.authUser.models import User
 from core.authUser.serializers import UserSerializer
 from core.authUser.permissions import AuthenticatedPermission
-
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -17,3 +18,8 @@ class UserViewSet(ModelViewSet):
     
     def get_queryset(self):
         return User.objects.filter(uuid=self.request.user.uuid)
+
+@api_view(["GET", "POST"])
+def ping(request):
+    print("REQUISIÇÃO CHEGOU:", request.method)
+    return Response({"status": "ok"})
